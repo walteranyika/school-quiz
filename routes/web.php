@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'QuizController@index')->name('home');
+Route::get('/questions', 'QuizController@index')->name('home');
 Route::post('/quiz', 'QuizController@store')->name('check');
 //quiz

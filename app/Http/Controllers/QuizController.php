@@ -20,13 +20,15 @@ class QuizController extends Controller
           'name'=>'required|min:5',
           'phone'=>'required',
           'school'=>'required',
-          'total'=>'required'
+          'total'=>'required',
+          'email'=>'sometimes|email'
         ]);
         //collect all the results
         $name= $request->name;
         $phone= $request->phone;
         $school= $request->school;
         $total= $request->total;
+        $email= $request->email;
         //clean the results
         $scores= $request->all();
         unset($scores["name"]);
@@ -34,6 +36,7 @@ class QuizController extends Controller
         unset($scores["phone"]);
         unset($scores["school"]);
         unset($scores["total"]);
+        unset($scores["email"]);
         //process the results
         $score=0;
         foreach($scores as $key=>$value){
@@ -50,6 +53,7 @@ class QuizController extends Controller
             'score'=>$result,
             'phone'=>$phone,
             'school'=>$school,
+            'email'=>$email,
         ]);
 
         return view('quiz',compact('result'));

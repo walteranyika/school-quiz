@@ -64,6 +64,10 @@
                     <input type="text" class="form-control" name="school" placeholder="School">
                 </div>
 
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email">
+                </div>
+
                 <hr>
 
                 <h3>Attempt All The Questions</h3>
